@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angry Nerds – Team Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Angry Nerds – A young team engineering bold tech for tomorrow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --card: #0e1324;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.2);
+      --accent-2: #22d3ee;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.2);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.6);
+      --max-width: 1080px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(22px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.6),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.25rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .nav-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: conic-gradient(from 210deg, #4f46e5, #22d3ee, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.5);
+      font-size: 0.7rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      transition: width 0.22s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.9));
+    }
+
+    .nav-cta:hover {
+      border-color: rgba(129, 140, 248, 0.9);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #e5e7eb, #38bdf8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+      background: none;
+      color: inherit;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #22d3ee, #4f46e5);
+      color: #0b1020;
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.35);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 48px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      color: var(--text-main);
+    }
+
+    .hero-tagline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-pill {
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.95));
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.14), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(129, 140, 248, 0.22), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-right-inner {
+      position: relative;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-chip {
+      padding: 0.27rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .metric-card {
+      padding: 0.8rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.78rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+    }
+
+    .hero-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      gap: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .badge-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(156, 163, 175, 0.9);
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 0.24rem 0.65rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+    }
+
+    .hero-footnote {
+      max-width: 11rem;
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    /* ABOUT / HIGHLIGHTS */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .pill {
+      padding: 0.32rem 0.78rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .highlight-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.6);
+    }
+
+    .highlight-title {
+      font-size: 0.92rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .highlight-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* TEAM VALUES */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.4rem;
+    }
+
+    .value-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 0.9rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+    }
+
+    .value-title {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .value-text {
+      color: var(--text-muted);
+      font-size: 0.77rem;
+    }
+
+    /* PROJECTS + STATS + STACK */
+    .projects-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.9rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .project-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+
+    .project-badge {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .project-actions {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .project-actions a {
+      color: var(--accent-2);
+    }
+
+    .project-thumb {
+      height: 100%;
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.96));
+    }
+
+    .stats-stack-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .stat-item {
+      padding: 0.6rem;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      text-align: left;
+      font-size: 0.78rem;
+    }
+
+    .stat-number {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
+
+    .stack-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.45rem;
+    }
+
+    .stack-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .stack-chip {
+      padding: 0.26rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      padding-bottom: 2.5rem;
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .test-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+    }
+
+    .test-quote {
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .test-name {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .test-role {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      padding-bottom: 3rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius-xl);
+      padding: 1.3rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.82rem;
+    }
+
+    .form-field label {
+      color: var(--text-muted);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 0.55rem 0.9rem;
+      outline: none;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+
+    .form-field textarea {
+      border-radius: 18px;
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+    }
+
+    .contact-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-meta a {
+      color: var(--accent-2);
+      font-size: 0.85rem;
+    }
+
+    .meta-heading {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-group {
+      margin-bottom: 0.8rem;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .social-pill {
+      padding: 0.26rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.5rem 0 1.7rem;
+      margin-top: 1rem;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 60%);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .projects-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding-inline: 1rem;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        gap: 1.8rem;
+      }
+
+      .hero-right {
+        margin-top: 0.5rem;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .test-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .projects-layout {
+        gap: 1.4rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .values-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">AN</div>
+        <span>Angry Nerds</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Hire Us</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Young engineering team · Angry Nerds</div>
+            <h1 class="hero-title">
+              We Are <span>Angry Nerds</span> — building smart solutions with passion & precision.
+            </h1>
+            <p class="hero-sub">
+              A young team engineering bold tech for tomorrow. We design, prototype, and ship solutions in AI, web, mobile, and hardware—with obsessive attention to detail.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-scroll="#projects">
+                View Our Projects
+              </button>
+              <button class="btn btn-ghost" data-scroll="#contact">
+                Hire Us
+              </button>
+            </div>
+
+            <div class="hero-tagline">
+              <div class="hero-pill">AI · Web · Apps · Robotics</div>
+              <div class="hero-pill">Clean code. Real impact.</div>
+            </div>
+          </div>
+
+          <aside class="hero-right">
+            <div class="hero-orbit"></div>
+            <div class="hero-right-inner">
+              <div class="hero-chip-row">
+                <div class="hero-chip">AI & ML</div>
+                <div class="hero-chip">Web & Mobile</div>
+                <div class="hero-chip">Robotics</div>
+                <div class="hero-chip">Hardware</div>
+              </div>
+
+              <div class="hero-metrics">
+                <div class="metric-card">
+                  <div class="metric-value">8+</div>
+                  <div class="metric-label">Hackathon Wins</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value">12</div>
+                  <div class="metric-label">Major Launches</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value">25+</div>
+                  <div class="metric-label">Stack Tools</div>
+                </div>
+              </div>
+
+              <div class="hero-bottom-row">
+                <div class="hero-badges">
+                  <div class="badge-label">Focus</div>
+                  <div class="badge-row">
+                    <div class="badge">Deep Work</div>
+                    <div class="badge">Team-First</div>
+                    <div class="badge">Experiment-Driven</div>
+                  </div>
+                </div>
+                <p class="hero-footnote">
+                  Built by engineers obsessed with learning, shipping, and iterating on real-world problems.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / TEAM -->
+    <section id="about">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">About the team</div>
+          <h2 class="section-title">Angry Nerds · Team</h2>
+          <p class="section-sub">
+            We are a passionate, innovative group of engineers specializing in AI, ML, web and mobile development, robotics, and hardware solutions.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              We believe in the power of bold ideas, clean code, and consistent delivery. Our vision is to become a premier tech team known for precision engineering, trailblazing creativity, and next-gen solutions.
+            </p>
+            <p>
+              Driven by curiosity and a love for building, we thrive on teamwork and technical growth. Angry Nerds stands out for its culture of innovation, focus on excellence, and commitment to solving complex challenges.
+            </p>
+            <div class="pill-row">
+              <div class="pill">Innovation</div>
+              <div class="pill">Technical Expertise</div>
+              <div class="pill">Creative Solvers</div>
+              <div class="pill">Student Engineers</div>
+            </div>
+          </div>
+
+          <div class="highlights-grid">
+            <article class="highlight-card">
+              <h3 class="highlight-title">Innovation</h3>
+              <p class="highlight-text">
+                Rapid prototyping, experimentation, and shipping. We design solutions that feel slightly ahead of their time.
+              </p>
+            </article>
+            <article class="highlight-card">
+              <h3 class="highlight-title">Technical Expertise</h3>
+              <p class="highlight-text">
+                Strong fundamentals in algorithms, systems, AI/ML, and full-stack development—backed by constant learning.
+              </p>
+            </article>
+            <article class="highlight-card">
+              <h3 class="highlight-title">Creative Problem Solving</h3>
+              <p class="highlight-text">
+                We approach problems from first principles and build solutions tuned to real constraints.
+              </p>
+            </article>
+            <article class="highlight-card">
+              <h3 class="highlight-title">Reliable Delivery</h3>
+              <p class="highlight-text">
+                Clear communication, scoped milestones, and consistent follow-through on every project.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM VALUES / CULTURE -->
+    <section id="team">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">Team culture</div>
+          <h2 class="section-title">Meet Our Team</h2>
+          <p class="section-sub">
+            Our engineers, developers, designers, and hardware experts bring a spirit of fearless experimentation and technical rigor to every challenge.
+          </p>
+        </header>
+
+        <p class="section-sub" style="margin-bottom: 1rem;">
+          Each member contributes deep expertise—from AI and ML to web interfaces, mobile platforms, and robotics—supported by a culture of peer code review and rapid skill growth.
+        </p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-title">Team Players</div>
+            <div class="value-text">We win as a team. Pair programming, shared debugging, and collective ownership.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-title">Deep Focus</div>
+            <div class="value-text">Long, uninterrupted blocks of work for high-quality output.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-title">Collaborative</div>
+            <div class="value-text">We treat feedback as a superpower and iterate quickly.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-title">Problem Solvers</div>
+            <div class="value-text">We care more about solving the right problem than just shipping features.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-title">Diverse Skills</div>
+            <div class="value-text">AI, frontend, backend, embedded, design—blended into one team.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-title">Award Winners</div>
+            <div class="value-text">Multiple hackathon wins and competition projects delivered under intense timelines.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / STATS / STACK -->
+    <section id="projects">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">Projects</div>
+          <h2 class="section-title">Team Projects</h2>
+          <p class="section-sub">
+            Explore our latest projects in AI, web, mobile apps, robotics, and open source—each crafted to deliver impact and innovation with modern tech stacks.
+          </p>
+        </header>
+
+        <div class="projects-layout">
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div>
+                <h3 class="project-title">Smart Digital Energy Meter</h3>
+                <p class="project-text">
+                  An IoT-enabled energy meter with anti-tamper protection, live monitoring, and usage analytics built on ESP32.
+                </p>
+                <div class="project-meta">
+                  Embedded · IoT · Realtime
+                  <div class="project-badge-row">
+                    <span class="project-badge">ESP32</span>
+                    <span class="project-badge">C / C++</span>
+                    <span class="project-badge">MQTT</span>
+                    <span class="project-badge">Cloud Dashboard</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" onclick="return false;">View case study →</a>
+                </div>
+              </div>
+              <div class="project-thumb">
+                Project mockup / diagram
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div>
+                <h3 class="project-title">Global Crisis Monitor</h3>
+                <p class="project-text">
+                  A data platform that visualizes global conflict, disaster, and health events with time-series analytics.
+                </p>
+                <div class="project-meta">
+                  Data · Analytics · Dashboards
+                  <div class="project-badge-row">
+                    <span class="project-badge">Python</span>
+                    <span class="project-badge">Pandas</span>
+                    <span class="project-badge">PostgreSQL</span>
+                    <span class="project-badge">Visualization</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" onclick="return false;">View case study →</a>
+                </div>
+              </div>
+              <div class="project-thumb">
+                Interactive map / charts
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div>
+                <h3 class="project-title">JaipurVolis 3D Prototype</h3>
+                <p class="project-text">
+                  A GTA-style 3D city prototype built with JavaScript and Three.js, featuring vehicles, simple AI enemies, and a dynamic environment.
+                </p>
+                <div class="project-meta">
+                  Graphics · JS · Game-like
+                  <div class="project-badge-row">
+                    <span class="project-badge">JavaScript</span>
+                    <span class="project-badge">Three.js</span>
+                    <span class="project-badge">WebGL</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" onclick="return false;">View case study →</a>
+                </div>
+              </div>
+              <div class="project-thumb">
+                3D city scene preview
+              </div>
+            </article>
+          </div>
+
+          <aside class="stats-stack-card">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Hackathon Wins</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Major Launches</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Tech Stack Tools</div>
+              </div>
+            </div>
+
+            <div class="meta-group">
+              <div class="stack-label">Core stack</div>
+              <div class="stack-chips">
+                <span class="stack-chip">TypeScript</span>
+                <span class="stack-chip">JavaScript</span>
+                <span class="stack-chip">Python</span>
+                <span class="stack-chip">React</span>
+                <span class="stack-chip">Node.js</span>
+              </div>
+            </div>
+
+            <div class="meta-group">
+              <div class="stack-label">AI / ML</div>
+              <div class="stack-chips">
+                <span class="stack-chip">TensorFlow</span>
+                <span class="stack-chip">PyTorch</span>
+                <span class="stack-chip">NumPy</span>
+              </div>
+            </div>
+
+            <div class="meta-group">
+              <div class="stack-label">Cloud & Infra</div>
+              <div class="stack-chips">
+                <span class="stack-chip">AWS</span>
+                <span class="stack-chip">Vercel</span>
+                <span class="stack-chip">Docker</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">Feedback</div>
+          <h2 class="section-title">What collaborators say</h2>
+        </header>
+
+        <div class="test-grid">
+          <article class="test-card">
+            <p class="test-quote">
+              “Angry Nerds delivered our project on time and exceeded expectations. Brilliant teamwork!”
+            </p>
+            <div>
+              <div class="test-name">Prof. Gaurav</div>
+              <div class="test-role">Professor</div>
+            </div>
+          </article>
+          <article class="test-card">
+            <p class="test-quote">
+              “A tech team that’s creative, reliable, and truly innovative. Highly recommended.”
+            </p>
+            <div>
+              <div class="test-name">Prof. Bhagirath</div>
+              <div class="test-role">Mentor</div>
+            </div>
+          </article>
+          <article class="test-card">
+            <p class="test-quote">
+              “Superb execution and passion. Clearly one of the best teams I’ve worked with.”
+            </p>
+            <div>
+              <div class="test-name">J. Patel</div>
+              <div class="test-role">Client</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Work with Angry Nerds</h2>
+          <p class="section-sub">
+            Let’s build something great together. Tell us about your idea, and we’ll reply with possibilities.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Let’s Build Something Great Together</h3>
+            <p>
+              Send us a quick note with what you’re working on or the problem you’re trying to solve. We’ll get back with ideas, timelines, and what we can do.
+            </p>
+
+            <form id="contact-form">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="form-field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us a bit about the project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: fit-content;">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-meta">
+            <div class="meta-group">
+              <div class="meta-heading">Quick links</div>
+              <div>Home · About · Projects · Team · Contact</div>
+            </div>
+
+            <div class="meta-group">
+              <div class="meta-heading">Email</div>
+              <a href="mailto:angrynerds@example.com">angrynerdsatwork@gmail.com</a>
+            </div>
+
+            <div class="meta-group">
+              <div class="meta-heading">Social</div>
+              <div class="social-row">
+                <div class="social-pill">GitHub</div>
+                <div class="social-pill">LinkedIn</div>
+                <div class="social-pill">Instagram</div>
+              </div>
+            </div>
+
+            <div class="meta-group">
+              <div class="meta-heading">Location</div>
+              <div>Based in India · Collaborating globally.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 Angry Nerds · All Rights Reserved</div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // smooth scroll for buttons with data-scroll
+    document.querySelectorAll("[data-scroll]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-scroll");
+        const el = document.querySelector(target);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // fake contact handler (no backend, just a friendly alert)
+    document.getElementById("contact-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thanks for reaching out to Angry Nerds!");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
