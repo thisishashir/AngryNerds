@@ -8,7 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta property="og:title" content="Angry Nerds – Team Portfolio">
+  <meta property="og:description" content="A young team engineering bold tech for tomorrow.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050816">
   <style>
     :root {
       --bg: #050816;
@@ -840,13 +843,13 @@
 
 <body>
   <!-- NAVBAR -->
-  <header class="nav">
+  <header class="nav" role="banner">
     <div class="nav-inner">
       <div class="nav-brand">
-        <div class="nav-logo">AN</div>
+        <div class="nav-logo" aria-hidden="true">AN</div>
         <span>Angry Nerds</span>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" role="navigation" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#team">Team</a>
@@ -884,8 +887,8 @@
             </div>
           </div>
 
-          <aside class="hero-right">
-            <div class="hero-orbit"></div>
+          <aside class="hero-right" aria-hidden="false">
+            <div class="hero-orbit" aria-hidden="true"></div>
             <div class="hero-right-inner">
               <div class="hero-chip-row">
                 <div class="hero-chip">AI & ML</div>
@@ -942,10 +945,10 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              We believe in the power of bold ideas, clean code, and consistent delivery. Our vision is to become a premier tech team known for precision engineering, trailblazing creativity, and next-gen solutions.
+              We believe in the power of bold ideas, clean code, and consistent delivery. Our vision is to become a premier tech team known for precision engineering, trailblazing creativity, and next-level product thinking.
             </p>
             <p>
-              Driven by curiosity and a love for building, we thrive on teamwork and technical growth. Angry Nerds stands out for its culture of innovation, focus on excellence, and commitment to solving complex challenges.
+              Driven by curiosity and a love for building, we thrive on teamwork and technical growth. Angry Nerds stands out for its culture of innovation, focus on excellence, and commitment to solving real problems.
             </p>
             <div class="pill-row">
               <div class="pill">Innovation</div>
@@ -955,7 +958,7 @@
             </div>
           </div>
 
-          <div class="highlights-grid">
+          <div class="highlights-grid" aria-hidden="false">
             <article class="highlight-card">
               <h3 class="highlight-title">Innovation</h3>
               <p class="highlight-text">
@@ -1002,163 +1005,92 @@
 
         <div class="values-grid">
           <div class="value-card">
-            <div class="value-title">Team Players</div>
-            <div class="value-text">We win as a team. Pair programming, shared debugging, and collective ownership.</div>
+            <div class="value-title">Ship Fast, Ship Right</div>
+            <div class="value-text">We iterate quickly but maintain engineering rigor and tests so that every release is reliable.</div>
           </div>
           <div class="value-card">
-            <div class="value-title">Deep Focus</div>
-            <div class="value-text">Long, uninterrupted blocks of work for high-quality output.</div>
+            <div class="value-title">Collaborative Culture</div>
+            <div class="value-text">Cross-disciplinary collaboration is at the heart of our product and research work.</div>
           </div>
           <div class="value-card">
-            <div class="value-title">Collaborative</div>
-            <div class="value-text">We treat feedback as a superpower and iterate quickly.</div>
-          </div>
-          <div class="value-card">
-            <div class="value-title">Problem Solvers</div>
-            <div class="value-text">We care more about solving the right problem than just shipping features.</div>
-          </div>
-          <div class="value-card">
-            <div class="value-title">Diverse Skills</div>
-            <div class="value-text">AI, frontend, backend, embedded, design—blended into one team.</div>
-          </div>
-          <div class="value-card">
-            <div class="value-title">Award Winners</div>
-            <div class="value-text">Multiple hackathon wins and competition projects delivered under intense timelines.</div>
+            <div class="value-title">Learner Mindset</div>
+            <div class="value-text">We continuously upskill and transfer knowledge across the team.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS / STATS / STACK -->
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
         <header class="section-header">
-          <div class="section-kicker">Projects</div>
-          <h2 class="section-title">Team Projects</h2>
+          <div class="section-kicker">Our work</div>
+          <h2 class="section-title">Projects</h2>
           <p class="section-sub">
-            Explore our latest projects in AI, web, mobile apps, robotics, and open source—each crafted to deliver impact and innovation with modern tech stacks.
+            A selection of recent projects spanning AI, web apps, and hardware prototypes.
           </p>
         </header>
 
         <div class="projects-layout">
           <div class="projects-grid">
-            <!-- Project 1 -->
             <article class="project-card">
               <div>
-                <h3 class="project-title">Smart Digital Energy Meter</h3>
-                <p class="project-text">
-                  An IoT-enabled energy meter with anti-tamper protection, live monitoring, and usage analytics built on ESP32.
-                </p>
-                <div class="project-meta">
-                  Embedded · IoT · Realtime
-                  <div class="project-badge-row">
-                    <span class="project-badge">ESP32</span>
-                    <span class="project-badge">C / C++</span>
-                    <span class="project-badge">MQTT</span>
-                    <span class="project-badge">Cloud Dashboard</span>
-                  </div>
+                <div class="project-title">Smart Inventory AI</div>
+                <div class="project-text">Computer vision model that automates shelf monitoring and stock estimation for retailers.</div>
+                <div class="project-badge-row">
+                  <span class="project-badge">AI</span>
+                  <span class="project-badge">Vision</span>
+                  <span class="project-badge">Edge</span>
                 </div>
                 <div class="project-actions">
-                  <a href="#" onclick="return false;">View case study →</a>
+                  <a href="#" aria-label="View project details">Case study →</a>
                 </div>
               </div>
-              <div class="project-thumb">
-                Project mockup / diagram
-              </div>
+              <div class="project-thumb" aria-hidden="true">Thumbnail</div>
             </article>
 
-            <!-- Project 2 -->
             <article class="project-card">
               <div>
-                <h3 class="project-title">Global Crisis Monitor</h3>
-                <p class="project-text">
-                  A data platform that visualizes global conflict, disaster, and health events with time-series analytics.
-                </p>
-                <div class="project-meta">
-                  Data · Analytics · Dashboards
-                  <div class="project-badge-row">
-                    <span class="project-badge">Python</span>
-                    <span class="project-badge">Pandas</span>
-                    <span class="project-badge">PostgreSQL</span>
-                    <span class="project-badge">Visualization</span>
-                  </div>
+                <div class="project-title">Realtime Collaboration App</div>
+                <div class="project-text">A web app enabling collaborative design sessions with low-latency syncing and playback.</div>
+                <div class="project-badge-row">
+                  <span class="project-badge">Web</span>
+                  <span class="project-badge">Realtime</span>
+                  <span class="project-badge">UX</span>
                 </div>
                 <div class="project-actions">
-                  <a href="#" onclick="return false;">View case study →</a>
+                  <a href="#" aria-label="View project details">Demo →</a>
                 </div>
               </div>
-              <div class="project-thumb">
-                Interactive map / charts
-              </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="project-card">
-              <div>
-                <h3 class="project-title">JaipurVolis 3D Prototype</h3>
-                <p class="project-text">
-                  A GTA-style 3D city prototype built with JavaScript and Three.js, featuring vehicles, simple AI enemies, and a dynamic environment.
-                </p>
-                <div class="project-meta">
-                  Graphics · JS · Game-like
-                  <div class="project-badge-row">
-                    <span class="project-badge">JavaScript</span>
-                    <span class="project-badge">Three.js</span>
-                    <span class="project-badge">WebGL</span>
-                  </div>
-                </div>
-                <div class="project-actions">
-                  <a href="#" onclick="return false;">View case study →</a>
-                </div>
-              </div>
-              <div class="project-thumb">
-                3D city scene preview
-              </div>
+              <div class="project-thumb" aria-hidden="true">Thumbnail</div>
             </article>
           </div>
 
           <aside class="stats-stack-card">
+            <div class="stack-label">Tech Stack</div>
+            <div class="stack-chips">
+              <div class="stack-chip">Python</div>
+              <div class="stack-chip">TensorFlow</div>
+              <div class="stack-chip">React</div>
+              <div class="stack-chip">Node</div>
+              <div class="stack-chip">ROS</div>
+            </div>
+
+            <div style="height:1rem"></div>
+
+            <div class="stack-label">Stats</div>
             <div class="stats-grid">
               <div class="stat-item">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Hackathon Wins</div>
-              </div>
-              <div class="stat-item">
                 <div class="stat-number">12</div>
-                <div class="stat-label">Major Launches</div>
+                <div class="stat-label">Active Projects</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">25+</div>
-                <div class="stat-label">Tech Stack Tools</div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Full-time Engineers</div>
               </div>
-            </div>
-
-            <div class="meta-group">
-              <div class="stack-label">Core stack</div>
-              <div class="stack-chips">
-                <span class="stack-chip">TypeScript</span>
-                <span class="stack-chip">JavaScript</span>
-                <span class="stack-chip">Python</span>
-                <span class="stack-chip">React</span>
-                <span class="stack-chip">Node.js</span>
-              </div>
-            </div>
-
-            <div class="meta-group">
-              <div class="stack-label">AI / ML</div>
-              <div class="stack-chips">
-                <span class="stack-chip">TensorFlow</span>
-                <span class="stack-chip">PyTorch</span>
-                <span class="stack-chip">NumPy</span>
-              </div>
-            </div>
-
-            <div class="meta-group">
-              <div class="stack-label">Cloud & Infra</div>
-              <div class="stack-chips">
-                <span class="stack-chip">AWS</span>
-                <span class="stack-chip">Vercel</span>
-                <span class="stack-chip">Docker</span>
+              <div class="stat-item">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Community Contributions</div>
               </div>
             </div>
           </aside>
@@ -1170,38 +1102,40 @@
     <section class="testimonials">
       <div class="container">
         <header class="section-header">
-          <div class="section-kicker">Feedback</div>
-          <h2 class="section-title">What collaborators say</h2>
+          <div class="section-kicker">What people say</div>
+          <h2 class="section-title">Testimonials</h2>
         </header>
 
         <div class="test-grid">
-          <article class="test-card">
-            <p class="test-quote">
-              “Angry Nerds delivered our project on time and exceeded expectations. Brilliant teamwork!”
-            </p>
+          <div class="test-card">
             <div>
-              <div class="test-name">Prof. Gaurav</div>
-              <div class="test-role">Professor</div>
+              <p class="test-quote">"Angry Nerds helped us ship a prototype in two weeks that saved time across our logistics pipeline."</p>
             </div>
-          </article>
-          <article class="test-card">
-            <p class="test-quote">
-              “A tech team that’s creative, reliable, and truly innovative. Highly recommended.”
-            </p>
             <div>
-              <div class="test-name">Prof. Bhagirath</div>
-              <div class="test-role">Mentor</div>
+              <div class="test-name">Alex R.</div>
+              <div class="test-role">Product Lead</div>
             </div>
-          </article>
-          <article class="test-card">
-            <p class="test-quote">
-              “Superb execution and passion. Clearly one of the best teams I’ve worked with.”
-            </p>
+          </div>
+
+          <div class="test-card">
             <div>
-              <div class="test-name">J. Patel</div>
-              <div class="test-role">Client</div>
+              <p class="test-quote">"Great engineering instincts and clean implementations — a pleasure to work with."</p>
             </div>
-          </article>
+            <div>
+              <div class="test-name">Priya S.</div>
+              <div class="test-role">CTO, Startup</div>
+            </div>
+          </div>
+
+          <div class="test-card">
+            <div>
+              <p class="test-quote">"Fast, communicative, and technically excellent. Delivered beyond expectations."</p>
+            </div>
+            <div>
+              <div class="test-name">Jordan K.</div>
+              <div class="test-role">Founder</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1210,101 +1144,109 @@
     <section id="contact" class="contact-section">
       <div class="container">
         <header class="section-header">
-          <div class="section-kicker">Contact</div>
-          <h2 class="section-title">Work with Angry Nerds</h2>
+          <div class="section-kicker">Get in touch</div>
+          <h2 class="section-title">Contact</h2>
           <p class="section-sub">
-            Let’s build something great together. Tell us about your idea, and we’ll reply with possibilities.
+            Interested in working together? Tell us about your project and we'll get back within 2 business days.
           </p>
         </header>
 
         <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Let’s Build Something Great Together</h3>
-            <p>
-              Send us a quick note with what you’re working on or the problem you’re trying to solve. We’ll get back with ideas, timelines, and what we can do.
-            </p>
+          <form class="contact-card" id="contactForm" aria-label="Contact form">
+            <h3>Message us</h3>
+            <p>Fill out the form and we'll reach out to schedule a quick chat.</p>
 
-            <form id="contact-form">
-              <div class="form-grid">
-                <div class="form-field">
-                  <label for="name">Name</label>
-                  <input id="name" name="name" placeholder="Your name" required />
-                </div>
-                <div class="form-field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                </div>
-                <div class="form-field">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Tell us a bit about the project..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: fit-content;">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Name</span>
+                <input type="text" name="name" id="name" required placeholder="Your name">
+              </label>
 
-          <div class="contact-meta">
-            <div class="meta-group">
-              <div class="meta-heading">Quick links</div>
-              <div>Home · About · Projects · Team · Contact</div>
-            </div>
+              <label class="form-field">
+                <span>Email</span>
+                <input type="email" name="email" id="email" required placeholder="you@example.com">
+              </label>
 
-            <div class="meta-group">
-              <div class="meta-heading">Email</div>
-              <a href="mailto:angrynerds@example.com">angrynerdsatwork@gmail.com</a>
-            </div>
+              <label class="form-field">
+                <span>Message</span>
+                <textarea name="message" id="message" required placeholder="Tell us about your project..."></textarea>
+              </label>
 
-            <div class="meta-group">
-              <div class="meta-heading">Social</div>
-              <div class="social-row">
-                <div class="social-pill">GitHub</div>
-                <div class="social-pill">LinkedIn</div>
-                <div class="social-pill">Instagram</div>
+              <div>
+                <button type="submit" class="btn btn-primary">Send message</button>
               </div>
             </div>
+          </form>
 
-            <div class="meta-group">
-              <div class="meta-heading">Location</div>
-              <div>Based in India · Collaborating globally.</div>
+          <aside class="contact-card" aria-label="Contact details">
+            <div class="meta-heading">Contact</div>
+            <div class="contact-meta">
+              <div class="meta-group">
+                <div><strong>Email</strong></div>
+                <a href="mailto:hello@angrynerds.example">hello@angrynerds.example</a>
+              </div>
+
+              <div class="meta-group">
+                <div><strong>Location</strong></div>
+                <div>City, Country</div>
+              </div>
+
+              <div class="meta-group">
+                <div class="meta-heading">Social</div>
+                <div class="social-row">
+                  <a class="social-pill" href="#" aria-label="Angry Nerds GitHub">GitHub</a>
+                  <a class="social-pill" href="#" aria-label="Angry Nerds Twitter">Twitter</a>
+                </div>
+              </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Angry Nerds</div>
+        <div class="footer-links">
+          <a href="#top">Top</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© 2025 Angry Nerds · All Rights Reserved</div>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    // smooth scroll for buttons with data-scroll
-    document.querySelectorAll("[data-scroll]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-scroll");
-        const el = document.querySelector(target);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
+    // fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for elements with data-scroll
+    document.addEventListener('click', function (e) {
+      const el = e.target.closest('[data-scroll]');
+      if (!el) return;
+      e.preventDefault();
+      const selector = el.getAttribute('data-scroll');
+      const target = document.querySelector(selector);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    // fake contact handler (no backend, just a friendly alert)
-    document.getElementById("contact-form").addEventListener("submit", (e) => {
+    // basic client-side form handler (replace with real backend)
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      alert("Thanks for reaching out to Angry Nerds!");
-      e.target.reset();
+      // Collect values (for demo only)
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      // TODO: replace with API request to server or form service (Netlify Forms, Formspree, etc.)
+      alert('Thanks — your message has been queued (demo). Implement a backend to send it for real.');
+      this.reset();
     });
   </script>
 </body>
